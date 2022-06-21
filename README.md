@@ -10,7 +10,8 @@
 
 ![2022-06-21_20-02-48](https://user-images.githubusercontent.com/64738590/174857378-a72e86ea-c355-4906-9f41-18440e8cc9e0.png)
 
-Входной файл для Spring приложения - src/main/java/com.example.userAPI/UserApiApplication    
+Входной файл для Spring приложения - src/main/java/com.example.userAPI/UserApiApplication  
+resources/application.properties - конфиг PostgreSQL.
 В пакетах:
 - controller - Rest контроллер для маршрутизации запросов по методам
 - model - Модель объекта User для работы с БД
@@ -24,7 +25,7 @@
   - [X] Методы принимают на вход требуемые параметры    
   - [X] Возвращают JSON с полем ID
   - [X] Метод user возвращает JSON со всеми полями пользователя, кроме пароля
-- [X] Валидация даты рождения (по году), валидация почты и email.
+- [X] Валидация даты рождения (по году), валидация почты и email
 - [X] Конфиг приложения с прописанным подключением к БД
 
 #### Что не удалось    
