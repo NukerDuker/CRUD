@@ -10,7 +10,7 @@
 
 ![2022-06-21_20-02-48](https://user-images.githubusercontent.com/64738590/174857378-a72e86ea-c355-4906-9f41-18440e8cc9e0.png)
 
-#### Реализованный функционал
+#### Реализованный функционал    
 - [X] RestAPI с использованием Spring
 - [X] Взаимодействие с БД PostgreSQL (JDBCTemplate)
 - [X] Реализованы 3 метода API    
@@ -29,7 +29,7 @@
 2. Запустить libs/userAPI-0.0.1-SNAPSHOT.jar через cmd
 3. Отправлять запросы на http://localhost:8080/v1
 
-##### Формат запросов
+##### Формат запросов    
 ```json
 POST /auth/register
 {
