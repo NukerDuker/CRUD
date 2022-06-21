@@ -10,6 +10,13 @@
 
 ![2022-06-21_20-02-48](https://user-images.githubusercontent.com/64738590/174857378-a72e86ea-c355-4906-9f41-18440e8cc9e0.png)
 
+Входной файл для Spring приложения - src/main/java/com.example.userAPI/UserApiApplication
+В пакетах
+- controller - Rest контроллер для маршрутизации запросов по методам
+- model - Модель объекта User для работы с БД
+- repository - DAO с реализацией JDBCTemplate и методов работы с базой
+- validators - Валидаторы почты и телефона
+
 #### Реализованный функционал    
 - [X] RestAPI с использованием Spring
 - [X] Взаимодействие с БД PostgreSQL (JDBCTemplate)
