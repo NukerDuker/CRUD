@@ -1,3 +1,10 @@
+buildscript {
+	ext {
+		thinPlugin = 'org.springframework.boot.experimental:spring-boot-thin-gradle-plugin'
+		thinVersion = '1.0.11.RELEASE'
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.7.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -8,11 +15,16 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+ext {
+	springBootPlugin = 'org.springframework.boot:spring-boot-gradle-plugin'
+	springBootVersion = '2.4.0'
+}
+
 repositories {
 	mavenCentral()
 }
-
 dependencies {
+
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -22,6 +34,8 @@ dependencies {
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.4.0'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jdbc
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jdbc', version: '2.7.0'
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	implementation 'com.google.code.gson:gson:2.9.0'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
