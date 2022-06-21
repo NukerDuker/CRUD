@@ -1,40 +1,44 @@
 package com.example.userAPI.model;
 
-import org.apache.tomcat.jni.Local;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
 import java.sql.Date;
-import java.time.LocalDate;
 
-@Entity
+
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String name;
+
     private String login;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
-    private String birth;
+
+    private Date birthDate;
+
     private String phone;
+
     private String tg;
+
     private String email;
 
     public User() {}
 
-    public User(String name, String login, String password, String birth, String phone) {
+    public User(String name, String login, String password, String phone, Date birthDate) {
         this.name = name;
         this.login = login;
         this.password = password;
-        this.birth = birth;
+        this.birthDate = birthDate;
         this.phone = phone;
     }
 
-    public User(String name, String login, String password, String birth, String phone, String tg, String email) {
+    public User(String name, String login, String password, String phone, Date birthDate, String tg, String email) {
         this.name = name;
         this.login = login;
         this.password = password;
-        this.birth = birth;
+        this.birthDate = birthDate;
         this.phone = phone;
         this.tg = tg;
         this.email = email;
@@ -72,12 +76,12 @@ public class User {
         this.password = password;
     }
 
-    public String getBirth() {
-        return birth;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth(String date) {
-        this.birth = date;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = Date.valueOf(birthDate);
     }
 
     public String getPhone() {
