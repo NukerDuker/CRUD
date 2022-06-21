@@ -10,7 +10,7 @@
 
 ![2022-06-21_20-02-48](https://user-images.githubusercontent.com/64738590/174857378-a72e86ea-c355-4906-9f41-18440e8cc9e0.png)
 
-Входной файл для Spring приложения - src/main/java/com.example.userAPI/UserApiApplication
+Входной файл для Spring приложения - src/main/java/com.example.userAPI/UserApiApplication    
 В пакетах
 - controller - Rest контроллер для маршрутизации запросов по методам
 - model - Модель объекта User для работы с БД
