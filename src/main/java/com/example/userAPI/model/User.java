@@ -24,7 +24,8 @@ public class User {
 
     private String email;
 
-    public User() {}
+    public User() {
+    }
 
     public User(Integer id) {
         this.id = id;

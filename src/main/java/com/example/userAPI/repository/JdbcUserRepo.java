@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class JdbcUserRepo implements UserRepository{
+public class JdbcUserRepo implements UserRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -17,7 +17,7 @@ public class JdbcUserRepo implements UserRepository{
     @Transactional
     @Override
     public String reg(User user) {
-        jdbcTemplate.update("INSERT INTO userauth.user_tab(name, login, password, phone, birth_date, tg, email) VALUES(?, ?, ?, ?, ?, ?, ?)", new Object[] { user.getName(), user.getLogin(), user.getPassword(), user.getPhone(), user.getBirthDate(), user.getTg(), user.getEmail() });
+        jdbcTemplate.update("INSERT INTO userauth.user_tab(name, login, password, phone, birth_date, tg, email) VALUES(?, ?, ?, ?, ?, ?, ?)", new Object[]{user.getName(), user.getLogin(), user.getPassword(), user.getPhone(), user.getBirthDate(), user.getTg(), user.getEmail()});
         user.setId(getUserId(user));
         Gson gson = new Gson();
         User idUser = new User(user.getId());
@@ -41,8 +41,8 @@ public class JdbcUserRepo implements UserRepository{
 
     @Override
     public Integer getUserId(User user) {
-        String sql = String.format("SELECT id from userauth.user_tab where name = '%s' and login = '%s' and password = '%s' and phone = '%s' and birth_date = '%s'",user.getName(), user.getLogin(), user.getPassword(), user.getPhone(), user.getBirthDate(), user.getTg(), user.getEmail());
-        return jdbcTemplate.queryForObject(sql,Integer.class);
+        String sql = String.format("SELECT id from userauth.user_tab where name = '%s' and login = '%s' and password = '%s' and phone = '%s' and birth_date = '%s'", user.getName(), user.getLogin(), user.getPassword(), user.getPhone(), user.getBirthDate(), user.getTg(), user.getEmail());
+        return jdbcTemplate.queryForObject(sql, Integer.class);
     }
 
 }
