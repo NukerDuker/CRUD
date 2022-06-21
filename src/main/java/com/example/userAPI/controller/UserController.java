@@ -17,25 +17,22 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/auth/register")
+    @GetMapping(value = "/auth/register", produces = "application/json")
     public ResponseEntity register(@RequestBody User user) {
         User local = new User(user.getName(), user.getLogin(), user.getPassword(), user.getPhone(), user.getBirthDate(), user.getTg(), user.getEmail());
         try {
-            local = userRepository.reg(local);
-            return new ResponseEntity(local, HttpStatus.CREATED);
+            return new ResponseEntity(userRepository.reg(local), HttpStatus.CREATED);
         } catch (DuplicateKeyException e) {
-            return new ResponseEntity("Логин уже существует.",HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @PostMapping(value = "/auth/login")
+    @PostMapping(value = "/auth/login", produces = "application/json")
     public ResponseEntity login(@RequestBody User user) {
         try{
-            User local = userRepository.login(user.getLogin(), user.getPassword());
-            return new ResponseEntity(local, HttpStatus.ACCEPTED);
+            return new ResponseEntity(userRepository.login(user.getLogin(), user.getPassword()), HttpStatus.ACCEPTED);
         }catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

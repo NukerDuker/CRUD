@@ -26,6 +26,10 @@ public class User {
 
     public User() {}
 
+    public User(Integer id) {
+        this.id = id;
+    }
+
     public User(String name, String login, String password, String phone, Date birthDate) {
         this.name = name;
         this.login = login;

@@ -22,6 +22,9 @@ dependencies {
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.4.0'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jdbc
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jdbc', version: '2.7.0'
+	// https://mvnrepository.com/artifact/com.google.code.gson/gson
+	implementation 'com.google.code.gson:gson:2.9.0'
+
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
