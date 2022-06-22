@@ -59,7 +59,7 @@ POST /auth/login
 }
 ```
 ```json
-GET /auth/login/{id}
+GET /user/{id}
 {
 }
 ```
