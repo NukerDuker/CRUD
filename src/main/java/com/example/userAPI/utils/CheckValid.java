@@ -1,4 +1,6 @@
-package com.example.userAPI.validators;
+package com.example.userAPI.utils;
+
+import com.example.userAPI.validators.Validator;
 
 public class CheckValid {
 
