@@ -57,7 +57,7 @@ public class UserController {
         }
     }
 
-    @GetMapping(value = "/auth/login/{id}", produces = "application/json")
+    @GetMapping(value = "/user/{id}", produces = "application/json")
     public ResponseEntity getUser(@PathVariable int id) {
         try {
             User user = userRepository.findById(id);
