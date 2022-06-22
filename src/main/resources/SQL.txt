@@ -1,3 +1,7 @@
+```SQL
+CREATE SCHEMA userauth
+    AUTHORIZATION postgres;
+    
 create table userauth.user_tab(
 id serial primary key,
 name varchar(80) not null,
@@ -7,3 +11,4 @@ phone varchar(15) not null,
 birth_date Date check(birth_date < '2004-06-20'),
 tg varchar,
 email varchar);
+```
