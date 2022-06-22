@@ -52,7 +52,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/auth/login/{id}")
+    @GetMapping("/user/{id}")
     public ResponseEntity getUser(@PathVariable int id) {
         try {
             User user = userRepository.findById(id);
