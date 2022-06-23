@@ -33,16 +33,6 @@ public class UserController {
             return new ResponseEntity(isValid.getJson(), HttpStatus.BAD_REQUEST);
         }
 
-        User local = new User(
-                user.getName(),
-                user.getLogin(),
-                user.getPassword(),
-                user.getPhone(),
-                user.getBirthDate(),
-                user.getTg(),
-                user.getEmail()
-        );
-
         try {
             return new ResponseEntity(userRepository.reg(user), HttpStatus.CREATED);
         } catch (Exception e) {
