@@ -25,19 +25,19 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping(value = "/auth/register", produces = "application/json")
-    public ResponseEntity<String> register(@RequestBody User user) {
+    public ResponseEntity register(@RequestBody User user) {
 
         CheckValid isValid = new CheckValid(user);
 
         if(!isValid.fullCheck()) {
-            return new ResponseEntity<>(isValid.getJson(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(isValid.getJson(), HttpStatus.BAD_REQUEST);
         }
 
         try {
-            return new ResponseEntity<>(userRepository.reg(user), HttpStatus.CREATED);
+            return new ResponseEntity(userRepository.reg(user), HttpStatus.CREATED);
         } catch (Exception e) {
             String json = gson.toJson(JsonResponse.getResponse("N5", e.getMessage()));
-            return new ResponseEntity<>(json, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity(json, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -47,7 +47,7 @@ public class UserController {
             return new ResponseEntity(userRepository.login(user.getLogin(), user.getPassword()), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             String json = gson.toJson(JsonResponse.getResponse("L3", e.getMessage()));
-            return new ResponseEntity(json, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(json, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
